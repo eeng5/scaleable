@@ -10,36 +10,56 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body onload="load()">
+<body onload="load('(mammal:0.14,turtle:0.02,(rayfinfish:0.25,(frog:0.01,salamander:0.01)50:0.12)95:0.09);')">
 
 <div class="d-flex align-items-center flex-column">
-<!--    <div class="dropdown">-->
-<!--        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--            Dropdown button-->
-<!--        </button>-->
-<!--        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
-<!--            <a class="dropdown-item" href="#">Action</a>-->
-<!--            <a class="dropdown-item" href="#">Another action</a>-->
-<!--            <a class="dropdown-item" href="#">Something else here</a>-->
-<!--        </div>-->
-<!--    </div>-->
+    <!--    <div class="dropdown">-->
+    <!--        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+    <!--            Dropdown button-->
+    <!--        </button>-->
+    <!--        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+    <!--            <a class="dropdown-item" href="#">Action</a>-->
+    <!--            <a class="dropdown-item" href="#">Another action</a>-->
+    <!--            <a class="dropdown-item" href="#">Something else here</a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <form onsubmit="DoSubmit();">
+        <div class="form-group">
+            <label for="newick-data">Paste Newick-formatted data below to replace the default data. To learn more about Newick format, click <a href="https://rosalind.info/glossary/newick-format/" target="_blank">here</a>!</label>
+            <input class="form-control" type="text" id="newick-data" name="name" size="50" placeholder="(mammal:0.14,turtle:0.02,(rayfinfish:0.25,(frog:0.01,salamander:0.01)50:0.12)95:0.09);">
+            <small id="newick-help" class="form-text text-muted">Sample Newick data:
+                <a href="https://github.com/eeng5/phylogenetic-tree/blob/main/data/sample.txt" target="_blank">small sample</a>,
+                <a href="https://github.com/eeng5/phylogenetic-tree/blob/main/data/longSample.txt" target="_blank">large sample</a>,
+                <a href="https://github.com/eeng5/phylogenetic-tree/blob/main/data/default.txt" target="_blank">default sample</a></small>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <button type="submit" class="btn btn-secondary">Build my tree!</button>
+            </div>
+        </div>
+    </form>
+
+    <div style="height: 50px"></div>
+    <div style="height: 50px"></div>
+
     <div class="align-self-center">
-        <h2 class="text-center">Circular Dendrogram</h2>
+        <!--        <h2 class="text-center">Circular Dendrogram</h2>-->
         <div id='radialtree'></div>
     </div>
     <div>
-<!--        <h2 class="text-center">Phylogram</h2>-->
-<!--        <div id='phylogram'></div>-->
+        <!--        <h2 class="text-center">Phylogram</h2>-->
+        <!--        <div id='phylogram'></div>-->
     </div>
     <div>
         <h2 class="text-center">Scaleable Tree</h2>
         <h4 class="text-center">Click on nodes to collapse them and condense your view. Also, try selecting different tree layouts!</h4>
         <div id='scaleableTree'></div>
     </div>
-<!--    <div>-->
-<!--        <h2 class="text-center">Interactive Tree</h2>-->
-<!--        <div id='interactiveTree'></div>-->
-<!--    </div>-->
+    <!--    <div>-->
+    <!--        <h2 class="text-center">Interactive Tree</h2>-->
+    <!--        <div id='interactiveTree'></div>-->
+    <!--    </div>-->
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
